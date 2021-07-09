@@ -5,6 +5,11 @@ name: check if two ci-cd systems can work on github in parallel
 "on":
   workflow_dispatch:
   push:
+    paths:
+      - '*.*'
+  pull_requests:
+    paths:
+      - '*.*'
 
 jobs:
   yamllint:
