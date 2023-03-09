@@ -1,19 +1,19 @@
 ---
 - job:
     name: demo-job
-    run: .playbooks/demojob.yaml
+    run: playbooks/demojob.yaml
 
 - project:
     default-branch: main
-    gh_check:
+    check:
       jobs:
         - demo-job
-    gh_gate:
+    gate:
       jobs:
         - demo-job
-    gh_post:
+    post:
       jobs:
         - demo-job
-    gh_tag:
+    tag:
       jobs:
         - demo-job
